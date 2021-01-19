@@ -13,7 +13,7 @@ const PublicRoutes = ({ children, ...rest }) => {
     return <Route
         { ...rest }
         render={({ location }) => (
-            !isAuthenticated ? (
+            !isAuthenticated() ? (
                 children
             ) : (
                 <Redirect to={{ pathname: '/home', state: { from: location } }}/>
@@ -25,7 +25,7 @@ const PrivateRoutes = ({ children, ...rest }) => {
     return <Route
         { ...rest }
         render={({ location }) => (
-            isAuthenticated ? (
+            isAuthenticated() ? (
                 children
             ) : (
                 <Redirect to={{ pathname: '/login', state: { from: location } }}/>
