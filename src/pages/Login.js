@@ -13,8 +13,8 @@ const Login = () => {
     ev.preventDefault();
     try{
       const { data } = await Api.post('/login', { email, password });
-      const { token } = data;
-      await login(token);
+      const { token, user } = data;
+      await login(token, user);
       history.replace('/home');
 
     }catch(err){

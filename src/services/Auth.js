@@ -9,15 +9,20 @@ export const getToken = () => {
   return GetLocalStorage(TOKEN);
 };
 
+export const getUser = () => {
+  const { user } = GetLocalStorage(TOKEN);
+  return user;
+}
+
 /**
  * @param {String} token 
  * @returns {Promise}
  */
 
-export const login = token => {
+export const login = (token, user) => {
     return new Promise((resolve, reject) => {
         try{
-            SetLocalStorage(TOKEN, token, 2);
+            SetLocalStorage(TOKEN, token, user, 2);
             return resolve(true);
         }catch{
             return reject(new Error('falha ao salvar token no localStorage'));

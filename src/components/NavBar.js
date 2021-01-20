@@ -19,7 +19,11 @@ const NavBar = () => {
   return (
     <div>
       <h1>Vitrine</h1>
+      <div>
+        <strong>{ user.active || 'Usuario precisa ser Ativado!' }</strong>
+      </div>
       <ul>
+        <li><Link>New Shop</Link></li>
         <li><Link to="/profile">{ user.name }</Link></li>
         <li><button onClick={handleOnLogoutClick}>Sair</button></li>
       </ul>
