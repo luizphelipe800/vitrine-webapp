@@ -7,7 +7,9 @@ import {
 } from 'react-router-dom';
 
 import LoginPage from './pages/Login';
+import RegisterPage from './pages/Register';
 import HomePage from './pages/Home';
+import ProfileHome from './pages/Profile';
 
 const PublicRoutes = ({ children, ...rest }) => {
     return <Route
@@ -35,16 +37,25 @@ const PrivateRoutes = ({ children, ...rest }) => {
 }
 
 const Routes = () => (
-    <BrowserRouter>
-        <Switch>
-            <PublicRoutes path="/login">
-                <LoginPage/>
-            </PublicRoutes>
-            <PrivateRoutes path="/home">
-                <HomePage/>
-            </PrivateRoutes>
-        </Switch>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Switch>
+      <PublicRoutes path="/login">
+        <LoginPage/>
+      </PublicRoutes>
+
+      <PublicRoutes path="/register">
+        <RegisterPage/>
+      </PublicRoutes>
+      
+      <PrivateRoutes path="/home">
+        <HomePage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/profile">
+        <ProfileHome/>
+      </PrivateRoutes>
+    </Switch>
+  </BrowserRouter>
 )
 
 export default Routes;

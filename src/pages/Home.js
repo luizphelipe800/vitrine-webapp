@@ -1,20 +1,32 @@
-import { logout } from '../services/Auth';
-import { useHistory } from 'react-router-dom';
+import Fetcher from '../utils/Fetcher';
+import useSWR from 'swr';
+
+//components
+import NavBar from '../components/NavBar';
 
 const Home = () => {
-    const history = useHistory();
+    const { data:shops, error } = useSWR('/shops', Fetcher);
 
-    const handleOnLogoutClick = () => {
-        logout()
-        .then(() => history.replace('/login'))
-        .catch(err => console.log(err));
-    }
+    if(!shops) return <strong>Loading...</strong>
 
     return (
+      <div>
+        <NavBar/>
+        <h1>Home</h1>
         <div>
-            <h1>Home</h1>
-            <button onClick={handleOnLogoutClick}>Sair</button>
+          <h2>Shops</h2>
+          {
+            shops.map(shop => (
+              <div key={shop.id}>
+                <h2>{ shop.name }</h2>
+                <p>{ shop.address }</p>
+                <p>{ shop.user.name }</p>
+                <p>{ shop.user.email }</p>
+              </div>
+            ))
+          }
         </div>
+      </div>
     )
 }
 

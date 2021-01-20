@@ -2,7 +2,6 @@ import Api from '../services/Api';
 import { login } from '../services/Auth';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { getToken } from '../services/Auth';
 
 const Login = () => {
   const [ email, setEmail ] = useState('');
@@ -26,7 +25,7 @@ const Login = () => {
 
   return (
     <div>
-      <p>{ error === null ? '' : error }</p>
+      <p>{ error || null }</p>
       <h1>Login</h1>
       <form onSubmit={handleOnSubmit}>
         <input 
@@ -45,6 +44,7 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <Link to="/register">Register Free</Link>
     </div>
   )
 }
