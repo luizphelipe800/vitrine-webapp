@@ -5,7 +5,9 @@ const TOKEN = '@token123';
 
 export const isAuthenticated = () => GetLocalStorage(TOKEN) !== null;
 
-export const getToken = () => GetLocalStorage(TOKEN).token;
+export const getToken = () => {
+  return GetLocalStorage(TOKEN);
+};
 
 /**
  * @param {String} token 
