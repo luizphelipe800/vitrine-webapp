@@ -22,10 +22,11 @@ const ShopList = props => {
           {
             getUser().id === shop.userId &&
             <div>
-              <Link>Edit</Link>
-              <Link>Remove</Link>
+              <Link to={`shops/edit/${shop.id}`}>Edit</Link>
+              <Link to={`shops/remove/${shop.id}`}>Remove</Link>
             </div>
           }
+          <Link to={`shops/details/${shop.id}`}>details</Link>
         </div>
         ))
       }

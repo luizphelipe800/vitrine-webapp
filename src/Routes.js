@@ -9,7 +9,11 @@ import {
 import LoginPage from './pages/Login';
 import RegisterPage from './pages/Register';
 import HomePage from './pages/Home';
-import ProfileHome from './pages/Profile';
+import ProfilePage from './pages/Profile';
+import EditShopsPage from './pages/EditShops';
+import RemoveShopsPage from './pages/RemoveShops';
+import CreateShopsPage from './pages/CreateShops';
+import DetailsShopsPage from './pages/DetailsShops';
 
 const PublicRoutes = ({ children, ...rest }) => {
     return <Route
@@ -52,7 +56,23 @@ const Routes = () => (
       </PrivateRoutes>
 
       <PrivateRoutes path="/profile">
-        <ProfileHome/>
+        <ProfilePage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/shops/edit/:id">
+        <EditShopsPage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/shops/remove/:id">
+        <RemoveShopsPage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/shops/details/:id">
+        <DetailsShopsPage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/shops/create">
+        <CreateShopsPage/>
       </PrivateRoutes>
     </Switch>
   </BrowserRouter>

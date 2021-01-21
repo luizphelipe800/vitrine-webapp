@@ -23,7 +23,7 @@ const NavBar = () => {
         <strong>{ user.active || 'Usuario precisa ser Ativado!' }</strong>
       </div>
       <ul>
-        <li><Link>New Shop</Link></li>
+        <li><Link to="/shops/create">New Shop</Link></li>
         <li><Link to="/profile">{ user.name }</Link></li>
         <li><button onClick={handleOnLogoutClick}>Sair</button></li>
       </ul>
