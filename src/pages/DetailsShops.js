@@ -1,31 +1,61 @@
-import useSWR from 'swr';
+import useSWR, { mutate } from 'swr';
 import Fetcher from '../utils/Fetcher';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../services/Auth';
 
 //components
 import NavBar from '../components/NavBar';
+import Api from '../services/Api';
 
 const DetailsShops = () => {
   const { id } = useParams();
-  const { data, error } = useSWR(`/shops/${id}`, Fetcher);
+  const { data: currentShop, error } = useSWR(`/shops/${id}`, Fetcher);
+  const [ image, setImage ] = useState(null);
+  const [ imageUrl, setImageUrl ] = useState(null);
 
-  if(!data) return <p>Loading...</p>
+  const handleOnSaveBtnClick = async () => {
+    try{
+      const form = new FormData();
+      form.append('shopImg', image, image.name);
+
+      await Api.post(`/files/${id}`, form);
+
+      mutate(`/shops/${id}`);
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  if(!currentShop) return <p>Loading...</p>
 
   return (
     <div>
       <NavBar/>
-      <h1>{ data.shop.name }</h1>
-      <p>{ data.shop.address }</p>
+      <h1>{ currentShop.shop.name }</h1>
+      <p>{ currentShop.shop.address }</p>
       <div>
-        <h3>Images</h3>
+        <h3>shop</h3>
         { 
-          data.shop.userId === getUser().id ? 
-          <button>add a new image</button> : 
-          null 
+          currentShop.shop.userId === getUser().id &&
+          <div>
+            <div>
+              <
+                input type="file"
+                accept="image/*"
+                onChange={ev => {
+                  setImage(ev.target.files[0]);
+                  setImageUrl(URL.createObjectURL(ev.target.files[0]));
+                }}
+              />
+              { imageUrl && <img src={imageUrl} alt="imagem a ser inserida"/>}
+            </div>
+
+            <button onClick={handleOnSaveBtnClick}>Salvar</button>
+          </div>
         }
         {
-          data.shopimages.map(image => (
+          currentShop.shopimages.map(image => (
             <div key={image.id}>
               <img src={image.url} alt={image.path}/>
             </div>
