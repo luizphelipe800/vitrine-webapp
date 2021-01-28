@@ -6,6 +6,7 @@ import { getUser } from '../services/Auth';
 
 //components
 import NavBar from '../components/NavBar';
+import ImageGalery from '../components/ImageGalery';
 import Api from '../services/Api';
 
 const DetailsShops = () => {
@@ -54,13 +55,7 @@ const DetailsShops = () => {
             <button onClick={handleOnSaveBtnClick}>Salvar</button>
           </div>
         }
-        {
-          currentShop.shopimages.map(image => (
-            <div key={image.id}>
-              <img src={image.url} alt={image.path}/>
-            </div>
-          ))
-        }
+        <ImageGalery images={ currentShop.shopimages }/>
       </div>
     </div>
   )
