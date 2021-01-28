@@ -11,7 +11,8 @@ const ShopList = props => {
 
   return (
     <div>
-      <h2>Shops</h2>
+      { error && <p>Ocorreu um erro</p> }
+      <h2>Lojas</h2>
       {
         shops.map(shop => (
         <div key={shop.id}>
@@ -22,11 +23,11 @@ const ShopList = props => {
           {
             getUser().id === shop.userId &&
             <div>
-              <Link to={`shops/edit/${shop.id}`}>Edit</Link>
-              <Link to={`shops/remove/${shop.id}`}>Remove</Link>
+              <Link to={`shops/edit/${shop.id}`}>editar</Link>
+              <Link to={`shops/remove/${shop.id}`}>apagar</Link>
             </div>
           }
-          <Link to={`shops/details/${shop.id}`}>details</Link>
+          <Link to={`shops/details/${shop.id}`}>detalhes</Link>
         </div>
         ))
       }

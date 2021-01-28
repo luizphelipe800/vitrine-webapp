@@ -36,7 +36,7 @@ const Register = () => {
   return (
     <div>
       <p>{ error || '' }</p>
-      <h1>Register Free</h1>
+      <h1>Cadastro Grátis</h1>
       <form onSubmit={handleOnSubmit}>
         <div>
           <input 
@@ -84,9 +84,9 @@ const Register = () => {
           </button>
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit">Registrar</button>
       </form>
-      <Link to="/login">Back to Login</Link>
+      <Link to="/login">Voltar e fazer login</Link>
     </div>
   )
 }

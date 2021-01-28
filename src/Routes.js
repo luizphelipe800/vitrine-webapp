@@ -14,6 +14,7 @@ import EditShopsPage from './pages/EditShops';
 import RemoveShopsPage from './pages/RemoveShops';
 import CreateShopsPage from './pages/CreateShops';
 import DetailsShopsPage from './pages/DetailsShops';
+import EditUsersPage from './pages/EditUsers';
 
 const PublicRoutes = ({ children, ...rest }) => {
     return <Route
@@ -73,6 +74,10 @@ const Routes = () => (
 
       <PrivateRoutes path="/shops/create">
         <CreateShopsPage/>
+      </PrivateRoutes>
+
+      <PrivateRoutes path="/users/edit">
+        <EditUsersPage/>
       </PrivateRoutes>
     </Switch>
   </BrowserRouter>

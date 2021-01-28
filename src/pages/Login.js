@@ -42,9 +42,9 @@ const Login = () => {
           onChange={ev => setPassword(ev.target.value)}
           value={password}
         />
-        <button type="submit">Login</button>
+        <button type="submit">Entrar</button>
       </form>
-      <Link to="/register">Register Free</Link>
+      <Link to="/register">Cadastre Grátis</Link>
     </div>
   )
 }

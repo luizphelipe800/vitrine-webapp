@@ -18,12 +18,12 @@ const NavBar = () => {
 
   return (
     <div>
-      <h1>Vitrine</h1>
+      <Link to="/home"><h1>Vitrine</h1></Link>
       <div>
         <strong>{ user.active || 'Usuario precisa ser Ativado!' }</strong>
       </div>
       <ul>
-        <li><Link to="/shops/create">New Shop</Link></li>
+        <li><Link to="/shops/create">Nova Loja</Link></li>
         <li><Link to="/profile">{ user.name }</Link></li>
         <li><button onClick={handleOnLogoutClick}>Sair</button></li>
       </ul>

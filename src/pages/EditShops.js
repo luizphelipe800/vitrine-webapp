@@ -55,7 +55,7 @@ const EditShops = () => {
   return (
     <div>
       <NavBar/>
-      <h1>Edit Shops</h1>
+      <h1>Edite sua Loja</h1>
       <form onSubmit={handleOnSubmit}>
         <div>
           <input 

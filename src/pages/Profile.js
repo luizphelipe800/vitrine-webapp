@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <div>
       <NavBar/>
-      <Link>Edit your infos</Link>
+      <Link to="/users/edit">Edit your infos</Link>
       <div>
         <h2>Your Shops</h2>
         <ShopList uid={getUser().id}/>

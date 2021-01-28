@@ -27,7 +27,7 @@ const CreateShops = () => {
   return (
     <div>
       <NavBar/>
-      <h1>Edit Shops</h1>
+      <h1>Adicione as informações da loja</h1>
       <form onSubmit={handleOnSubmit}>
         <div>
           <input 
