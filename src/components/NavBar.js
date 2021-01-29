@@ -17,15 +17,23 @@ const NavBar = () => {
   if(error) return <p>Algum erro Aconteceu!</p>
 
   return (
-    <div>
-      <Link to="/home"><h1>Vitrine</h1></Link>
+    <div className="
+      flex 
+      md:flex-row 
+      md:justify-between 
+      md:items-center 
+      p-10
+    ">
+      <Link to="/home" className="text-3xl font-bold">
+        <h1>Vitrine</h1>
+      </Link>
       <div>
         <strong>{ user.active || 'Usuario precisa ser Ativado!' }</strong>
       </div>
-      <ul>
+      <ul className="flex flex-row justify-between items-center">
         <li><Link to="/shops/create">Nova Loja</Link></li>
-        <li><Link to="/profile">{ user.name }</Link></li>
-        <li><button onClick={handleOnLogoutClick}>Sair</button></li>
+        <li className="md:ml-5 sm:ml-2"><Link to="/profile">{ user.name }</Link></li>
+        <li className="md:ml-5 sm:ml-2"><button onClick={handleOnLogoutClick}>Sair</button></li>
       </ul>
     </div>
   )

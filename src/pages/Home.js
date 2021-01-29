@@ -7,7 +7,7 @@ const Home = () => {
     return (
       <div>
         <NavBar/>
-        <h1>Home</h1>
+        <h1 className="ml-10 text-10md font-bold">Home</h1>
         <ShopList/>
       </div>
     )
