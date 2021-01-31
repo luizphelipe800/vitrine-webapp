@@ -37,7 +37,7 @@ const CreateShops = () => {
               id="nome"
               value={nome}
               onChange={ev => setNome(ev.target.value)}
-              className="border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
@@ -48,7 +48,7 @@ const CreateShops = () => {
               id="rua"
               value={rua}
               onChange={ev => setRua(ev.target.value)}
-              className="border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
@@ -59,7 +59,7 @@ const CreateShops = () => {
               id="numero"
               value={numero}
               onChange={ev => setNumero(ev.target.value)}
-              className="border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
@@ -70,7 +70,7 @@ const CreateShops = () => {
               id="bairro"
               value={bairro}
               onChange={ev => setBairro(ev.target.value)}
-              className="border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
@@ -81,7 +81,7 @@ const CreateShops = () => {
               id="cidade"
               value={cidade}
               onChange={ev => setCidade(ev.target.value)}
-              className="border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
@@ -92,12 +92,12 @@ const CreateShops = () => {
               id="uf"
               value={uf}
               onChange={ev => setUf(ev.target.value)}
-              className="w-3/12 border-gray-200 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
+              className="w-3/12 border-gray-400 border p-2 focus:border-yellow-500 focus:shadow-md outline-none"
               required
             />
           </div>
         </div>
-        <button type="submit" className="py-2 px-3 mt-3 bg-yellow-500 text-white shadow-md rounded">
+        <button type="submit" className="py-2 px-3 mt-3 bg-yellow-500 text-gray-900 shadow-md rounded">
           Salvar
         </button>
       </form>

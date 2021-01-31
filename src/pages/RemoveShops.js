@@ -28,9 +28,23 @@ const RemoveShops = () => {
   return (
     <div>
       <NavBar/>
-      <h1>Para Excluir sua loja, clique em confimar!</h1>
-      <button onClick={handleOnConfirmBtnClick}>Confirmar</button>
-      <button onClick={handleOnCancelBtnClick}>Cancelar</button>
+      <div className="w-screen flex flex-col justify-center items-center p-10">
+        <h1 className="text-4xl font-bold text-gray-900 my-8">Para Excluir sua loja, clique em confimar!</h1>
+        <div className="w-full md:w-6/12 flex flex-row justify-between">
+          <button 
+            onClick={handleOnConfirmBtnClick}
+            className="py-2 px-4 bg-red-500 text-white shadow-md rounded"
+          >
+            Confirmar
+          </button>
+          <button 
+            onClick={handleOnCancelBtnClick}
+            className="py-2 px-4 bg-gray-200 text-gray-900 shadow-md rounded"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

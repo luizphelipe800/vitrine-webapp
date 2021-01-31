@@ -44,7 +44,7 @@ const Register = () => {
   }
 
   return (
-    <div className="h-screen w-full container flex flex-col justify-center items-center bg-yellow-500">
+    <div className="h-screen w-full flex flex-col justify-center items-center bg-yellow-500 text-gray-900">
       <p>{ error || '' }</p>
       <h1 className="font-bold text-6xl text-gray-900 mb-6">Vitrine</h1>
       <h1 className="font-thin text-2xl">Cadastro Grátis</h1>
