@@ -14,7 +14,7 @@ const NavBar = () => {
 
   const handleOnLogoutClick = () => {
     logout()
-    .then(() => history.replace('/login'))
+    .then(() => history.replace('/'))
     .catch(err => console.log(err));
 }
 

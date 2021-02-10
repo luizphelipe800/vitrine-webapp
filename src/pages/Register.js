@@ -33,7 +33,7 @@ const Register = () => {
     try{
       if(comparePasswords(password, rePassword)){
         await Api.post('/register', { name, email, password });
-        history.replace('/login');
+        history.replace('/');
       }
 
       return setError('senha diferentes');

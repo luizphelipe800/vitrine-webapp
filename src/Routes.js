@@ -35,7 +35,7 @@ const PrivateRoutes = ({ children, ...rest }) => {
             isAuthenticated() ? (
                 children
             ) : (
-                <Redirect to={{ pathname: '/login', state: { from: location } }}/>
+                <Redirect to={{ pathname: '/', state: { from: location } }}/>
             )
         )}
     />
@@ -44,7 +44,7 @@ const PrivateRoutes = ({ children, ...rest }) => {
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <PublicRoutes path="/login">
+      <PublicRoutes  exact path="/">
         <LoginPage/>
       </PublicRoutes>
 
